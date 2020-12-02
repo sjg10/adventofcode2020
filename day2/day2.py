@@ -16,12 +16,8 @@ def valid_new(p):
     return a ^ b
 
 def check_pass(filename, validator):
-    good = 0
     with open(filename) as fd:
-        for l in fd:
-            if validator(l):
-                good += 1
-    return good
+        return sum(1 for x in fd if validator(x))
 
 if __name__ == "__main__":
     print(check_pass("input.txt",valid_old))
