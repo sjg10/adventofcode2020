@@ -1,5 +1,6 @@
 if __name__ == "__main__":
-    expenses = sorted(map(lambda x : int(x.strip()), open("input.txt", 'r').readlines()))
+    with open("input.txt") as fd:
+        expenses = sorted(map(lambda x : int(x.strip()), fd.readlines()))
     target = 2020
 
     # 2 at a time
